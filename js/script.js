@@ -85,6 +85,11 @@ function createGalleryItem(item) {
   img.src = imageUrl;
   img.alt = title;
   img.className = 'space-image';
+  // If image fails to load, show a placeholder
+  img.onerror = function() {
+    img.src = 'img/placeholder.png'; // You can add a placeholder image in the img/ folder
+    img.alt = 'Image not available';
+  };
   itemDiv.appendChild(img);
 
   const titleElem = document.createElement('h3');
