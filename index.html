@@ -7,6 +7,9 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <!-- Animated space background canvas -->
+  <canvas id="space-bg"></canvas>
+
   <div class="container">
     <header class="site-header">
       <img src="img/nasa-worm-logo.png" alt="NASA Logo" class="logo" />
@@ -17,10 +20,33 @@
       <button id="getImageBtn">Fetch Space Images</button>
     </div>
 
+    <!-- Did You Know Fact -->
+    <section id="spaceFact" class="space-fact"></section>
+
     <div id="gallery" class="gallery">
       <div class="placeholder">
         <div class="placeholder-icon">🔭</div>
         <p>Click "Fetch Space Images" to explore the cosmos!</p>
+      </div>
+    </div>
+
+    <!-- NASA Loading Spinner -->
+    <div id="loader" class="loader">
+      <div class="orbit"></div>
+      <img src="img/nasa-worm-logo.png" alt="NASA Logo" class="loader-logo">
+      <div class="loader-message">
+        <p>Your beautiful moon images are on the way. 🌚</p>
+      </div>
+    </div>
+
+    <!-- Modal for image details -->
+    <div id="imageModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <img id="modalImage" src="" alt="Large Space Image" class="modal-img" />
+        <h2 id="modalTitle"></h2>
+        <p id="modalDate"></p>
+        <p id="modalExplanation"></p>
       </div>
     </div>
   </div>
